@@ -11,7 +11,7 @@ import struct
 import numpy as np
 import nmrglue as ng
 
-#Original code from: https://github.com/mstrocchi/fid-to-wav/commit/f2114e4c114bbe62e7f19fa25ea4205b19eac0d0#
+#Based on code from: https://github.com/mstrocchi/fid-to-wav/commit/f2114e4c114bbe62e7f19fa25ea4205b19eac0d0#
 
 ''' FOR TE 1D EXPERIMENTS'''
 FILE_NAME = 'TE_Proton_exp_slow_16s_waterpressat.wav'
@@ -22,7 +22,6 @@ data = []
 
 dic,data = ng.bruker.read('/opt/topspin4.1.0/NMR/2021_09_27_Glutamine/4') #Where is the data? 
 data = np.true_divide(data, np.max(np.abs(data)))
-
 
 file_path = (path_to_directory + '/' + FILE_NAME)
 file_wav = wave.open(file_path, "w")
